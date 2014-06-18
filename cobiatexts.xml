@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ANSI"?>
+<?xml-stylesheet type="text/xsl" href="..\Schemas\CobiaTexts.xslt"?>
+<CobiaTexts xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://www.rti.se/develop/xml-schemas/CobiaTexts.xsd" StructureVersion="1.1">
+ <Version>1.0.0.1</Version>
+ <Language>en</Language>
+ <DecimalSeparator>.</DecimalSeparator>
+ <DisplayMenuText>yes</DisplayMenuText>
+ <DisplayRQExRange>no</DisplayRQExRange>
+ <MenuMain>
+  <Heading>Cobia Menu</Heading>
+  <Reset>Reset Measurement</Reset>
+  <History>Prev. Measurementsé</History>
+  <Previous>Prev. Measurementsé</Previous>
+  <Settings>Settingsé</Settings>
+  <Prefs>Preferencesé</Prefs>
+  <SystemInfo>System Infoé</SystemInfo>
+  <Off>Power Off</Off>
+ </MenuMain>
+ <MenuSettings>
+  <Heading>(Measurement) Settings</Heading>
+  <Delay>Delay</Delay>
+  <Window>Window</Window>
+  <PostDelay>Post Delay</PostDelay>
+  <RestartDelay>Restart Delay</RestartDelay>
+  <TimeTrigLvl>Time Trig Lvl</TimeTrigLvl>
+  <TubeVoltage>Tube Voltage</TubeVoltage>
+  <RestoreAll>Restore All</RestoreAll>
+ </MenuSettings>
+ <MenuPrefs>
+  <Heading>(User) Preferences</Heading>
+  <DimTime>Dim Display</DimTime>
+  <AutoOff>Auto Power Off</AutoOff>
+  <DisplayCycles>Display Cycles</DisplayCycles>
+  <CycleTime>Display Time</CycleTime>
+  <Language>Language</Language>
+  <Units>Units</Units>
+  <FlipDisplay>Flip Display</FlipDisplay>
+  <RestoreAll>Restore All</RestoreAll>
+ </MenuPrefs>
+ <MenuPrevious>
+  <Heading>Previous Sessions</Heading>
+  <Recent>Current</Recent>
+ </MenuPrevious>
+ <MenuPreviousDel>
+  <Heading>Delete Previous</Heading>
+  <DeleteSingle>Delete Measurement</DeleteSingle>
+  <DeleteSession>Delete Session</DeleteSession>
+  <DeleteAll>Delete All Sessions</DeleteAll>
+ </MenuPreviousDel>
+ <MenuSysInfo>
+  <Heading>System Info</Heading>
+  <Type>Type</Type>
+  <Serial>S/N</Serial>
+  <VersionProd>Product v.</VersionProd>
+  <VersionSystem>System v.</VersionSystem>
+  <VersionBL>Updater v.</VersionBL>
+  <VersionFW>Firmware v.</VersionFW>
+ </MenuSysInfo>
+ <InfoTexts>
+  <ModalityRAD>R/F</ModalityRAD>
+  <ModalityMAM>MAM</ModalityMAM>
+  <ModalityIntraoral>Intraoral</ModalityIntraoral>
+  <ModalityOPG>Panoramic</ModalityOPG>
+  <ModalityCT>CT</ModalityCT>
+  <ModalityUnknown>Unknown Model!</ModalityUnknown>
+  <ModelKVDose>kV & Dose</ModelKVDose>
+  <ModelKV>kV</ModelKV>
+  <ModelDose>Dose</ModelDose>
+  <ModelUnknown>Unknown</ModelUnknown>
+  <USBMode1>Service mode. Be careful!</USBMode1>
+  <USBMode2>Use reset to end...</USBMode2>
+  <Updating1>System Update</Updating1>
+  <Updating2>Press any key to abort!</Updating2>
+  <ShuttingDown1>Powering</ShuttingDown1>
+  <ShuttingDown2>off...</ShuttingDown2>
+  <Error>Error!</Error>
+  <ErrorCode>Error Code:</ErrorCode>
+  <TextUndef>Undef.</TextUndef>
+  <TextAuto>Auto</TextAuto>
+  <TextNever>Never</TextNever>
+  <TextLow>Low</TextLow>
+  <DetectorNotSuppUpdate>Detector not supported, system update needed!</DetectorNotSuppUpdate>
+  <DetectorNotSuppCorrupt>Detector not supported or corrupt!</DetectorNotSuppCorrupt>
+  <DetectorError>Detector error! Needs service.</DetectorError>
+  <DetectorTPcorr>Detector measurement needs TP correction for increased accuracy.</DetectorTPcorr>
+  <BattWarn1Title>Battery Warning</BattWarn1Title>
+  <BattWarn1Row1>Low Battery!</BattWarn1Row1>
+  <BattWarn1Row2>XX minutes remaining</BattWarn1Row2>
+  <BattWarn1Row3></BattWarn1Row3>
+  <BattWarn1Row4></BattWarn1Row4>
+  <BattWarn2Title>Battery Critical!</BattWarn2Title>
+  <BattWarn2Row1>Very Low Level!</BattWarn2Row1>
+  <BattWarn2Row2>Please attach charger</BattWarn2Row2>
+  <BattWarn2Row3>or USB cable!</BattWarn2Row3>
+  <BattWarn2Row4></BattWarn2Row4>
+  <BattWarn2RowRed>2</BattWarn2RowRed>
+  <SystemInit>Initialising System...</SystemInit>
+  <ResetText>Busy...</ResetText>
+ </InfoTexts>
+ <History>
+  <Date>2013-02-26</Date>
+  <Sign>TB</Sign>
+  <Desc>File for v2013.2B.</Desc>
+  <Date>2013-10-16</Date>
+  <Sign>TB</Sign>
+  <Desc>Beta: Added texts for Flex.</Desc>
+ </History>
+</CobiaTexts>

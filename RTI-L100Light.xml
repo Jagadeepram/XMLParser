@@ -1,0 +1,88 @@
+<?xml-stylesheet type="text/xsl" href="..\Schemas\IDG.xslt"?>
+<IDG xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://www.rti.se/develop/xml-schemas/IDG.xsd" StructureVersion="2.1">
+	<DataVersion>1.0.0.0</DataVersion>
+	<Name>
+		<Type>RTI-L100Light</Type>
+	</Name>
+	<Display>
+		<Caption>Light Probe</Caption>
+		<LongCaption>RTI Light Probe</LongCaption>
+		<Description>Probe for measurement of monitor light output and ambient light</Description>
+	</Display>
+	<Settings>
+		<Measure>
+			<Polarity>+</Polarity>
+			<Noisy>false</Noisy>
+		</Measure>
+		<Triglevel>
+			<TrigLvlH1>10</TrigLvlH1>
+			<TrigLvlH2>100</TrigLvlH2>
+			<TrigLvlL1>100</TrigLvlL1>
+			<TrigLvlL2>1000</TrigLvlL2>
+			<MulFactH>50</MulFactH>
+			<MulFactL>20</MulFactL>
+		</Triglevel>
+		<Range>
+			<SensVHi>true</SensVHi>
+			<SensHi>true</SensHi>
+			<SensLow>true</SensLow>
+		</Range>
+		<Bias>
+			<Connector>ST40X10</Connector>
+			<Voltage>0</Voltage>
+			<VoltageMin>0</VoltageMin>
+			<VoltageMax>0</VoltageMax>
+		</Bias>
+		<UseTPCorr>false</UseTPCorr>
+        <NormableToDist>no</NormableToDist>
+		<PrimaryUse>Light</PrimaryUse>
+	</Settings>
+	<SupressWarnings>true</SupressWarnings>
+	<Hist>
+		<Date>2013-12-10</Date>
+		<Sign>TB</Sign>
+		<Desc>New type, added IDG2.</Desc>
+		<Date>2013-12-04</Date>
+		<Sign>TB</Sign>
+		<Desc>Adjusted TL1 and TL2.</Desc>
+		<Date>2013-11-27</Date>
+		<Sign>TB</Sign>
+		<Desc>Created based on PLP.</Desc>
+	</Hist>
+</IDG>
+<IDG2 xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://www.rti.se/develop/xml-schemas/IDG+.xsd" StructureVersion="1.0">
+    <!-- RTI-L100Light -->
+    <DataVersion>0.1</DataVersion>
+    <Unit-cd%m2>
+        <MaxDigits>
+            <P18E>4</P18E>      <!-- Luminance -->
+            <P19E>4</P19E>      <!-- Illuminance -->
+            <P8E>3</P8E>        <!-- Pulse frequency -->
+        </MaxDigits>
+        <MinPrefix>
+            <P18E>1E+0</P18E>      <!-- Luminance -->
+            <P19E>1E+0</P19E>      <!-- Illuminance -->
+            <P8E>1E+0</P8E>        <!-- Pulse frequency -->
+        </MinPrefix>
+        <MaxPrefix>
+            <P18E>1E+3</P18E>      <!-- Luminance -->
+            <P19E>1E+3</P19E>      <!-- Illuminance -->
+            <P8E>1E+0</P8E>        <!-- Pulse frequency -->
+        </MaxPrefix>
+        <MinValue>
+            <P18E>0,1E+0</P18E>      <!-- Luminance -->
+            <P19E>0,1E+0</P19E>      <!-- Illuminance -->
+            <P8E>0,1E+0</P8E>        <!-- Pulse frequency -->
+        </MinValue>
+        <MaxValue>
+            <P18E>999,9E+3</P18E>      <!-- Luminance -->
+            <P19E>99,99E+3</P19E>      <!-- Illuminance -->
+            <P8E>260,9E+0</P8E>        <!-- Pulse frequency -->
+        </MaxValue>
+        <Resolution>
+            <P18E>0,01E+0</P18E>      <!-- Luminance -->
+            <P19E>0,01E+0</P19E>      <!-- Illuminance -->
+            <P8E>0,01E+0</P8E>        <!-- Pulse frequency -->
+        </Resolution>
+    </Unit-cd%m2>
+</IDG2>

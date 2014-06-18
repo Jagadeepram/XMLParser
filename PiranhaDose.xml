@@ -1,0 +1,54 @@
+<?xml-stylesheet type="text/xsl" href="..\Schemas\IDG.xslt"?>
+<?altova_sps ..\Schemas\IDG_Edit.sps?>
+<IDG xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://www.rti.se/develop/xml-schemas/IDG.xsd" StructureVersion="2.1">
+	<DataVersion>0.4.0.0</DataVersion>
+	<Name>
+		<Type>PiranhaDose</Type>
+		<Alias/>
+        <ADI>8</ADI>
+	</Name>
+	<Display>
+		<Caption>Piranha Dose Probe</Caption>
+		<LongCaption>Piranha Dose Probe</LongCaption>
+		<Description/>
+	</Display>
+	<Settings>
+		<Measure>
+			<Polarity>+</Polarity>
+			<Noisy>false</Noisy>
+		</Measure>
+		<Triglevel>
+			<TrigLvlH1>1</TrigLvlH1>
+			<TrigLvlH2>20</TrigLvlH2>
+			<TrigLvlL1>100</TrigLvlL1>
+			<TrigLvlL2>200</TrigLvlL2>
+			<MulFactH>50</MulFactH>
+			<MulFactL>20</MulFactL>
+		</Triglevel>
+		<Range>
+			<SensVHi>true</SensVHi>
+			<SensHi>true</SensHi>
+			<SensLow>true</SensLow>
+		</Range>
+		<Bias>
+			<Connector>ST40X10</Connector>
+			<Voltage>0</Voltage>
+			<VoltageMin>0</VoltageMin>
+			<VoltageMax>0</VoltageMax>            
+		</Bias>
+		<UseTPCorr>false</UseTPCorr>
+        <NormableToDist>square</NormableToDist>
+		<PrimaryUse>Dose</PrimaryUse>
+	</Settings>
+	<SupressWarnings>false</SupressWarnings>
+	</Hist>
+		<Date>2013-09-12</Date>
+		<Sign>TB</Sign>
+		<Desc>New triglevel for Cobia.</Desc>
+	<Hist>
+	<Hist>
+		<Date>2007-03-22</Date>
+		<Sign>MW</Sign>
+		<Desc>Based on R100B</Desc>
+	</Hist>
+</IDG>

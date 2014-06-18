@@ -1,0 +1,119 @@
+<IDG+ xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://www.rti.se/develop/xml-schemas/IDG+.xsd" StructureVersion="1.0">
+	<DataVersion>0.1.0.0</DataVersion>
+	<Unit-Gy%s>
+		<MaxDigits>
+			<P2E>4</P2E>   <!-- Dose -->
+			<P3E>4</P3E>   <!-- Doserate -->
+			<P9E>4</P9E>   <!-- Dose/pulse -->
+			<P10E>4</P10E> <!-- Doserate/pulse -->
+		</MaxDigits>
+		<MinPrefix>
+			<P2E>-9</P2E>    <!-- Dose -->
+			<P3E>-6</P3E>    <!-- Doserate -->
+			<P9E>-9</P9E>    <!-- Dose/pulse -->
+			<P10E>-6</P10E>  <!-- Doserate/pulse -->
+		</MinPrefix>
+		<MaxPrefix>
+			<P2E>3</P2E>   <!-- Dose -->
+			<P3E>-3</P3E>  <!-- Doserate -->
+			<P9E>0</P9E>   <!-- Dose/pulse -->
+			<P10E>-3</P10E>  <!-- Doserate/pulse -->
+		</MaxPrefix>
+		<MinValue>
+			<P2E>1E-9</P2E>    <!-- Dose -->
+			<P3E>0.4E-6</P3E>  <!-- Doserate -->
+			<P9E>1E-9</P9E>    <!-- Dose/pulse -->
+			<P10E>1E-6</P10E>  <!-- Doserate/pulse -->
+		</MinValue>
+		<MaxValue>
+			<P2E>9.999E3</P2E>   <!-- Dose -->
+			<P3E>999.9E-3</P3E>  <!-- Doserate -->
+			<P9E>9.999E0</P9E>   <!-- Dose/pulse -->
+			<P10E>999E-3</P10E>  <!-- Doserate/pulse -->
+		</MaxValue>
+		<Resolution>
+			<P2E>1E-9</P2E>     <!-- Dose -->
+			<P3E>0.1E-6</P3E>   <!-- Doserate -->
+			<P9E>0.1E-9</P9E>   <!-- Dose/pulse -->
+			<P10E>0.1E-6</P10E> <!-- Doserate/pulse -->
+		</Resolution>
+	</Unit-Gy%s>
+	<Unit-R%s>
+		<MaxDigits>
+			<P2E>4</P2E>   <!-- Dose -->
+			<P3E>4</P3E>   <!-- Doserate -->
+			<P9E>4</P9E>   <!-- Dose/pulse -->
+			<P10E>4</P10E> <!-- Doserate/pulse -->
+		</MaxDigits>
+		<MaxValue>
+			<P2E>999.9E3</P2E>   <!-- Dose -->
+			<P3E>99.99E0</P3E>   <!-- Doserate -->
+			<P9E>999.9E0</P9E>   <!-- Dose/pulse -->
+			<P10E>99.99E0</P10E> <!-- Doserate/pulse -->
+		</MaxValue>
+		<MinValue>
+			<P2E>0.1E-6</P2E>    <!-- Dose -->
+			<P3E>0.05E-3</P3E>   <!-- Doserate -->
+			<P9E>0.1E-6</P9E>    <!-- Dose/pulse -->
+			<P10E>0.1E-3</P10E>  <!-- Doserate/pulse -->
+		</MinValue>
+		<Resolution>
+			<P2E>0.1E-6</P2E>     <!-- Dose -->
+			<P3E>0.05E-3</P3E>    <!-- Doserate -->
+			<P9E>0.01E-6</P9E>    <!-- Dose/pulse -->
+			<P10E>0.01E-3</P10E>  <!-- Doserate/pulse -->
+		</Resolution>
+	</Unit-R%s>
+	<Unit-R%min>
+		<MaxDigits>
+			<P2E>4</P2E>   <!-- Dose -->
+			<P3E>4</P3E>   <!-- Doserate -->
+			<P9E>4</P9E>   <!-- Dose/pulse -->
+			<P10E>4</P10E> <!-- Doserate/pulse -->
+		</MaxDigits>
+		<MaxValue>
+			<P2E>999.9E3</P2E>   <!-- Dose -->
+			<P3E>9.999E3</P3E>   <!-- Doserate -->
+			<P9E>999.9E0</P9E>   <!-- Dose/pulse -->
+			<P10E>1999E0</P10E> <!-- Doserate/pulse -->
+		</MaxValue>
+		<MinValue>
+			<P2E>0.1E-6</P2E>    <!-- Dose -->
+			<P3E>3E-3</P3E>   <!-- Doserate -->
+			<P9E>0.1E-6</P9E>    <!-- Dose/pulse -->
+			<P10E>5E-3</P10E>  <!-- Doserate/pulse -->
+		</MinValue>
+		<Resolution>
+			<P2E>0.1E-6</P2E>     <!-- Dose -->
+			<P3E>1E-3</P3E>    <!-- Doserate -->
+			<P9E>0.01E-6</P9E>    <!-- Dose/pulse -->
+			<P10E>0.5E-3</P10E>  <!-- Doserate/pulse -->
+		</Resolution>
+	</Unit-R%min>
+	<Unit-R%h>
+		<MaxDigits>
+			<P2E>4</P2E>   <!-- Dose -->
+			<P3E>4</P3E>   <!-- Doserate -->
+			<P9E>4</P9E>   <!-- Dose/pulse -->
+			<P10E>4</P10E> <!-- Doserate/pulse -->
+		</MaxDigits>
+		<MaxValue>
+			<P2E>999.9E3</P2E>   <!-- Dose -->
+			<P3E>999.9E3</P3E>   <!-- Doserate -->
+			<P9E>999.9E0</P9E>   <!-- Dose/pulse -->
+			<P10E>19.99E3</P10E> <!-- Doserate/pulse -->
+		</MaxValue>
+		<MinValue>
+			<P2E>0.1E-6</P2E>    <!-- Dose -->
+			<P3E>0.2E0</P3E>   <!-- Doserate -->
+			<P9E>0.1E-6</P9E>    <!-- Dose/pulse -->
+			<P10E>0.5E0</P10E>  <!-- Doserate/pulse -->
+		</MinValue>
+		<Resolution>
+			<P2E>0.1E-6</P2E>     <!-- Dose -->
+			<P3E>0.1E0</P3E>    <!-- Doserate -->
+			<P9E>0.01E-6</P9E>    <!-- Dose/pulse -->
+			<P10E>0.05E0</P10E>  <!-- Doserate/pulse -->
+		</Resolution>
+    </Unit-R%h>
+</IDG+>

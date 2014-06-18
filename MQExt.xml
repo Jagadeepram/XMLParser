@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ANSI"?>
+<!--
+Cobia External MQ Texts
+======================
+Changes
+======================
+
+2013-05-28/TB
+ - First list
+-->
+<CobiaExtMQs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\Schemas\MQ-text.xsd" StructureVersion="1.0" DataVersion="1.0">
+<MQ Type="M0"> <SelectCaption>Mo/ 30 µm Mo + 2 mm Al</SelectCaption> <MQCaption1>M0:</MQCaption1> <MQCaption2>Mo/30 µmMo + 2mmAl</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M1"> <SelectCaption>Mo/ 30 µm Mo</SelectCaption> <MQCaption1>M1:</MQCaption1> <MQCaption2>Mo/ 30 µm Mo</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M1d"> <SelectCaption>Mo/ 30 µm Mo + 2 mm Al</SelectCaption> <MQCaption1>M1d:</MQCaption1> <MQCaption2>Mo/30 µmMo+2mmAl</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M1e"> <SelectCaption>Mo/30µm Mo+3mm Al+PMMA</SelectCaption> <MQCaption1>M1e:</MQCaption1> <MQCaption2>Mo/Mo+3mm Al+PMMA</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M2"> <SelectCaption>Mo/ 2 mm Al</SelectCaption> <MQCaption1>M2:</MQCaption1> <MQCaption2>Mo/ 2 mm Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M3"> <SelectCaption>Mo/ 25 µm Rh</SelectCaption> <MQCaption1>M3:</MQCaption1> <MQCaption2>Mo/ 25 µm Rh</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M3a"> <SelectCaption>Mo/25µm Rh+40mm PMMA</SelectCaption> <MQCaption1>M3a:</MQCaption1> <MQCaption2>Mo/25µm Rh+40PMMA</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M4"> <SelectCaption>Rh/ 25 µm Rh</SelectCaption> <MQCaption1>M4:</MQCaption1> <MQCaption2>Rh/ 25 µm Rh</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M4e"> <SelectCaption>Rh/25µm Rh+3mm Al+PMMA</SelectCaption> <MQCaption1>M4e:</MQCaption1> <MQCaption2>Rh/25µRh+3Al+PMMA</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M5"> <SelectCaption>Rh/ 1 mm Al</SelectCaption> <MQCaption1>M5:</MQCaption1> <MQCaption2>Rh/ 1 mm Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M6"> <SelectCaption>W/ 50 µm Rh</SelectCaption> <MQCaption1>M6:</MQCaption1> <MQCaption2>W/ 50 µm Rh</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M6a"> <SelectCaption>W/50µm Rh+40mm PMMA</SelectCaption> <MQCaption1>M6a:</MQCaption1> <MQCaption2>W/50µmRh+40mmPMMA</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M7"> <SelectCaption>W/ 0,5 mm Al</SelectCaption> <MQCaption1>M7:</MQCaption1> <MQCaption2>W/ 0,5 mm Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M7d"> <SelectCaption>W/0.5mm Al+2mm Al</SelectCaption> <MQCaption1>M7d:</MQCaption1> <MQCaption2>W/0.5mm Al+2mm Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M8"> <SelectCaption>Mo/ 1 mm Al</SelectCaption> <MQCaption1>M8:</MQCaption1> <MQCaption2>Mo/ 1 mm Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M10"> <SelectCaption>W/55µmAg</SelectCaption> <MQCaption1>M10:</MQCaption1> <MQCaption2>W/55µmAg</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M10d"> <SelectCaption>W/55µmAg+2mmAl</SelectCaption> <MQCaption1>M10d:</MQCaption1> <MQCaption2>W/55µmAg+2mmAl</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M11"> <SelectCaption>W/75µmAg</SelectCaption> <MQCaption1>M11:</MQCaption1> <MQCaption2>W/75µmAg</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M11d"> <SelectCaption>W/75µmAg+2mmAl</SelectCaption> <MQCaption1>M11d:</MQCaption1> <MQCaption2>W/75µmAg+2mmAl</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M12"> <SelectCaption>W/ 50 µm Rh (Gio)</SelectCaption> <MQCaption1>M12:</MQCaption1> <MQCaption2>W/ 50 µm Rh (Gio)</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M13"> <SelectCaption>Mo/ 300µm Cu & 300µm Al</SelectCaption> <MQCaption1>M13:</MQCaption1> <MQCaption2>Mo/0.3Cu&0.3Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="M14"> <SelectCaption>Rh/ 300µm Cu & 300µm Al</SelectCaption> <MQCaption1>M14:</MQCaption1> <MQCaption2>Rh/0.3Cu&0.3Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="R1"> <SelectCaption>W/ 3 mm Al</SelectCaption> <MQCaption1>R1:</MQCaption1> <MQCaption2>W/ 3 mm Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="R2"> <SelectCaption>W/ 23 mm Al</SelectCaption> <MQCaption1>R2:</MQCaption1> <MQCaption2>W/ 23 mm Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="R3"> <SelectCaption>RQR (W/ 2,5 mm Al)</SelectCaption> <MQCaption1>R3:</MQCaption1> <MQCaption2>RQR (W/ 2,5 mm Al)</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="R3"> <SelectCaption>RQR (W/ 2,5 mm Al)</SelectCaption> <MQCaption1>R3:</MQCaption1> <MQCaption2>RQR (W/ 2,5 mm Al)</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="R4"> <SelectCaption>RQA (W/ 2,5-45 mm Al)</SelectCaption> <MQCaption1>R4:</MQCaption1> <MQCaption2>RQA (W/2,5-45mmAl)</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="C1"> <SelectCaption>W/ 3 mm Al</SelectCaption> <MQCaption1>C1:</MQCaption1> <MQCaption2>W/ 3 mm Al</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="C2"> <SelectCaption>W/3,0 mm Al + 0,25 mm Cu</SelectCaption> <MQCaption1>C2:</MQCaption1> <MQCaption2>W/3 mmAl+0,25 mmCu</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="C3"> <SelectCaption>Straton(Siem1)</SelectCaption> <MQCaption1>C3:</MQCaption1> <MQCaption2>Straton(Siem1)</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="C4"> <SelectCaption>GECT</SelectCaption> <MQCaption1>C4:</MQCaption1> <MQCaption2>GECT</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="C5"> <SelectCaption>Aquillion64-</SelectCaption> <MQCaption1>C5:</MQCaption1> <MQCaption2>Aquillion64-</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="L1"> <SelectCaption>Luminance (mon)</SelectCaption> <MQCaption1>L1:</MQCaption1> <MQCaption2>Luminance</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="L2"> <SelectCaption>Illuminance (lux)</SelectCaption> <MQCaption1>L2:</MQCaption1> <MQCaption2>Illuminance</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="L3"> <SelectCaption>Luminance (II)</SelectCaption> <MQCaption1>L3:</MQCaption1> <MQCaption2>Luminance</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="O1"> <SelectCaption>Tube current</SelectCaption> <MQCaption1>O1:</MQCaption1> <MQCaption2>Tube current</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+<MQ Type="O2"> <SelectCaption>Voltage</SelectCaption> <MQCaption1>O2:</MQCaption1> <MQCaption2>Voltage</MQCaption2> <MQCaption3></MQCaption3> </MQ>
+</CobiaExtMQs>

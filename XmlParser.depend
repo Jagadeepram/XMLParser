@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1400507519 source:c:\cobia\designs\xmlparser_codeblocks\xmlparser\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ReadXMLFile.h"
+	"XML.h"
+
+1400507451 source:c:\cobia\designs\xmlparser_codeblocks\xmlparser\readxmlfile.c
+	<stdio.h>
+	"ReadXmlFile.h"
+	"XML.h"
+
+1400504928 source:c:\cobia\designs\xmlparser_codeblocks\xmlparser\xml.c
+	<stdio.h>
+	<string.h>
+	"XML.h"
+
+1400506644 c:\cobia\designs\xmlparser_codeblocks\xmlparser\readxmlfile.h
+
+1400506664 c:\cobia\designs\xmlparser_codeblocks\xmlparser\xml.h
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ANSI"?>
+<!--
+Cobia Probe Texts
+======================
+Changes
+======================
+
+2013-06-17/TB
+ - First list
+-->
+<CobiaProbes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\Schemas\CobiaProbes.xsd" StructureVersion="1.0" DataVersion="1.0">
+<Probe Type="PiranhaCTDP"> <DisplayCaption>CT Dose Profiler</DisplayCaption> </Probe>
+<Probe Type="PiranhaDose"> <DisplayCaption>Dose Probe</DisplayCaption> </Probe>
+<Probe Kind="PiranhaLight"> <DisplayCaption>Light Probe</DisplayCaption> </Probe>
+<Probe Type="PiranhaMAS-1"> <DisplayCaption>MAS-1</DisplayCaption> </Probe>
+<Probe Type="PiranhaMAS-1v3"> <DisplayCaption>MAS-1</DisplayCaption> </Probe>
+<Probe Type="PiranhaMAS-2"> <DisplayCaption>MAS-2</DisplayCaption> </Probe>
+<Probe Kind="PiranhaMAS-3"> <DisplayCaption>MAS-3</DisplayCaption> </Probe>
+<Probe Type="PiranhaT20"> <DisplayCaption>T20 Dose Probe</DisplayCaption> </Probe>
+<Probe Type="PBCA"> <DisplayCaption>Chamber Adapter</DisplayCaption> </Probe>
+<Probe Type="Magna3cc (PBCA)"> <DisplayCaption>Chamber Adapter</DisplayCaption> </Probe>
+<Probe Type="Magna1cc (PBCA)"> <DisplayCaption>Chamber Adapter</DisplayCaption> </Probe>
+<Probe Type="IonCh. 15-300cc (PBCA)"> <DisplayCaption>Chamber Adapter</DisplayCaption> </Probe>
+<Probe Type="IonCh. 3-15cc (PBCA)"> <DisplayCaption>Chamber Adapter</DisplayCaption> </Probe>
+<Probe Type="IonCh. 0.2-3cc (PBCA)"> <DisplayCaption>Chamber Adapter</DisplayCaption> </Probe>
+<Probe Type="DCT10 (PBCA)"> <DisplayCaption>Chamber Adapter</DisplayCaption> </Probe>
+</CobiaProbes>

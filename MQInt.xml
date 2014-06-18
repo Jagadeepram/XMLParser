@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ANSI"?>
+<!--
+Changes Internal Cobia MQ Texts
+======================
+2014-02-12/TB
+ - Separated blocks for different modalities.
+2013-05-28/TB
+ - First list
+-->
+<CobiaIntMQs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\Schemas\MQ-text.xsd" StructureVersion="1.0" DataVersion="1.0">
+    <MAM>
+        <MQ Type="M1"> <SelectCaption>Mo/ 30 µm Mo</SelectCaption> <MQCaption1>M1:</MQCaption1> <MQCaption2>Mo/Mo</MQCaption2> <MQCaption3> 18-49 kV</MQCaption3> </MQ>
+        <MQ Type="M3"> <SelectCaption>Mo/ 25 µm Rh</SelectCaption> <MQCaption1>M3:</MQCaption1> <MQCaption2>Mo/Rh</MQCaption2> <MQCaption3> 18-49 kV</MQCaption3> </MQ>
+        <MQ Type="M4"> <SelectCaption>Rh/ 25 µm Rh</SelectCaption> <MQCaption1>M4:</MQCaption1> <MQCaption2>Rh/Rh</MQCaption2> <MQCaption3> 18-49 kV</MQCaption3> </MQ>
+        <MQ Type="M5"> <SelectCaption>Rh/ 1 mm Al</SelectCaption> <MQCaption1>M5:</MQCaption1> <MQCaption2>Rh/Al</MQCaption2> <MQCaption3> 18-49 kV</MQCaption3> </MQ>
+        <MQ Type="M6"> <SelectCaption>W/ 50 µm Rh</SelectCaption> <MQCaption1>M6:</MQCaption1> <MQCaption2>W/Rh</MQCaption2> <MQCaption3> 18-49 kV</MQCaption3> </MQ>
+        <MQ Type="M7"> <SelectCaption>W/ 0,5 mm Al</SelectCaption> <MQCaption1>M7:</MQCaption1> <MQCaption2>W/Al</MQCaption2> <MQCaption3> 18-49 kV</MQCaption3> </MQ>
+        <MQ Type="M8"> <SelectCaption>Mo/ 1 mm Al</SelectCaption> <MQCaption1>M8:</MQCaption1> <MQCaption2>Mo/Al</MQCaption2> <MQCaption3> 18-49 kV</MQCaption3> </MQ>
+        <MQ Type="M10"> <SelectCaption>W/55µmAg</SelectCaption> <MQCaption1>M10:</MQCaption1> <MQCaption2>W/Ag</MQCaption2> <MQCaption3> 18-49 kV</MQCaption3> </MQ>
+    </MAM>
+    <RF>
+        <MQ Type="R1"><SelectCaption>W/ 3 mm Al</SelectCaption><MQCaption1>R1:</MQCaption1><MQCaption2>W/Al</MQCaption2><MQCaption3> 40-150 kV</MQCaption3></MQ>
+    </RF>
+    <DENT>
+        <MQ Type="D1"><SelectCaption>W/ 3 mm Al</SelectCaption><MQCaption1>D1:</MQCaption1><MQCaption2>W/Al</MQCaption2><MQCaption3> 45-105 kV</MQCaption3></MQ>
+    </DENT>
+</CobiaIntMQs>
