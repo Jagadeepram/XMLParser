@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<IDS xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://rti.se/develop/xml-schemas/IDS.xsd" Type="full" StructureVersion="3.0"><Data>
+		<Det Type="PiranhaDose" Serial="66666" Caption="">
+			<MQ Type="M0">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">1e06</Ch></Cal>
+			</MQ>
+			<MQ Type="M1">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">1e06</Ch></Cal>
+			</MQ>
+			<MQ Type="M3">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">9.18e05</Ch></Cal>
+			</MQ>
+			<MQ Type="M3a">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">7.4e05</Ch></Cal>
+			</MQ>
+			<MQ Type="M4">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">9.17e05</Ch></Cal>
+			</MQ>
+			<MQ Type="M6">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">8.23e05</Ch></Cal>
+			</MQ>
+			<MQ Type="M6a">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">7.1e05</Ch></Cal>
+			</MQ>
+			<MQ Type="M7">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">9.71e05</Ch></Cal>
+			</MQ>
+			<MQ Type="M7d">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">6.67e05</Ch></Cal>
+			</MQ>
+			<MQ Type="M10">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">8e05</Ch></Cal>
+			</MQ>
+			<MQ Type="M11">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">7.54e05</Ch></Cal>
+			</MQ>
+			<MQ Type="M13">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">1.647e04</Ch></Cal>
+			</MQ>
+			<MQ Type="M14">
+				<Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">1.7e04</Ch></Cal>
+			</MQ>
+			<MQ Type="M15"><Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">1e06</Ch></Cal></MQ><MQ Type="M16"><Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">1e06</Ch></Cal></MQ><MQ Type="M17"><Cal Allowed="ChCu" Date="2014-05-08" Lab="RTISE"><Ch Unit="Gy">1e06</Ch></Cal></MQ></Det>
+	</Data></IDS>

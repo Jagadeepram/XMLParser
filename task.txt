@@ -1,0 +1,4 @@
+Result option.
+Test for all probes
+Take care of special char.
+Memory check

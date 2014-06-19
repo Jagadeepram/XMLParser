@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<IDS xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://rti.se/develop/xml-schemas/IDS.xsd" Type="full" StructureVersion="3.0"><Data>
+		<Det Type="PiranhaLight" Serial="1211115" Caption="">
+			<MQ Type="L1">
+				<Cal Allowed="Cu" Date="2013-07-02" Lab="RTISE"><Cu Unit="cd/m2">1.578e10</Cu></Cal>
+			</MQ>
+			<MQ Type="L2">
+				<Cal Allowed="Cu" Date="2013-07-02" Lab="RTISE"><Cu Unit="lx">6.087e09</Cu></Cal>
+			</MQ>
+		</Det>
+	</Data></IDS>
