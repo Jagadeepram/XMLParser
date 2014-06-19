@@ -106,24 +106,24 @@
 #include "ReadXmlFile.h"
 #include "XML.h"
 
-int XmlReadBlockWithAttributes(char* block, char* attribute, char* key,char* fileName, char *result)
+int XmlReadBlockWithAttributes(char* fileName,attributeParam* attParam,int attNo,int attResult,char *result)
 {
     FILE *fp;
     char ch;
     int status;
-    attributeParam attParam[3];
-
-    attParam[0].block = "<Det ";
-    attParam[0].attribute = "Type=";
-    attParam[0].key = "\"MAS-3B\"";
-
-    attParam[1].block = block;
-    attParam[1].attribute = attribute;
-    attParam[1].key = key;
-
-    attParam[2].block = "<Cu ";
-    attParam[2].attribute = "Unit=";
-    attParam[2].key = "\"A\"";
+//    attributeParam attParam[3];
+//
+//    attParam[0].block = "<Det ";
+//    attParam[0].attribute = "Type=";
+//    attParam[0].key = "\"MAS-3B\"";
+//
+//    attParam[1].block = block;
+//    attParam[1].attribute = attribute;
+//    attParam[1].key = key;
+//
+//    attParam[2].block = ;
+//    attParam[2].attribute = "Unit=";
+//    attParam[2].key = ;
 
     // Open the file.
     if( (fp=(FILE *)fopen(fileName,"r")) == NULL)
@@ -132,7 +132,7 @@ int XmlReadBlockWithAttributes(char* block, char* attribute, char* key,char* fil
     do {
         ch = getc(fp);
        // status=ReadBlockWithAttribute(ch,attParam,3,result);
-       status = ExtractXMLData(ch,attParam,3,1,result);
+       status = ExtractXMLData(ch,attParam,attNo,attResult,result);
     } while(ch!=EOF && status == 0);
 
 //    printf("\nBlock: %s\n",block);
@@ -213,13 +213,20 @@ int XmlReadBlock(char* block,char* fileName, char *result)
     char ch;
     int status;
     result[0]='\0';
+
+    attributeParam attParam[1];
+    attParam[0].attribute = NULL;
+    attParam[0].block = block;//"MQ";//
+    attParam[0].key = NULL;
+    InitParser();
     // Open the file.
     if( (fp=(FILE *)fopen(fileName,"r")) == NULL)
         printf("File not found!\n");
 
     do {
         ch = getc(fp);
-        status = ReadBlock(ch,block, result);
+       status = ExtractXMLData(ch,attParam,1,1,result);
+//        status = ReadBlock(ch,block, result);
     } while(ch!=EOF && (status == 0));
 
     fclose(fp);

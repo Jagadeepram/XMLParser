@@ -320,6 +320,7 @@ char *EndTag (char* tag)
         strcpy(endPtr,">");
     else
         strcat(endBlock,">");
+//printf("%s",endBlock);
     return endBlock;
 }
 
@@ -346,7 +347,7 @@ bool IsAlphaNum(char ch)
     if( ( ch>='0'&& ch <='9' ) ||
         (ch >= 'a' && ch <= 'z') ||
        (ch >= 'A' && ch <= 'Z')
-       || ch == '<' || ch == ' ')
+       || ch == '<' )
        ret = true;
     return ret;
 }
@@ -364,7 +365,6 @@ int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, cha
     {
     case PARSE_STATE_START:
         buffIndex = 0;
-//        printf("%c",ch);
         if(ch == '<')
         {
             buff[buffIndex++] = ch;
@@ -372,7 +372,7 @@ int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, cha
         }
         if(activateStore)
         {
-            if(IsAlphaNum(ch)  ||( result[resultIndex-1] && ch == ' '))
+            if(IsAlphaNum(ch)||( result[resultIndex-1] != ' ' && ch == ' '))
                 result[resultIndex++]=ch;
         }
         break;
@@ -397,7 +397,6 @@ int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, cha
                 {
                     xmlState = PARSE_STATE_STOP_ANALYSE;
                     activeAtt = i;
-//                    printf("DELETED %s",buff);
                     break;
                 }
             }
@@ -423,8 +422,6 @@ int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, cha
                      activeAtt = i+1;
                      if(activeAtt == attNo)
                         dataFound = 1;
-//                        printf("%s :\n", result);
-//                     printf("FOUND: %s", buff);
                      break;
                 }
             }
