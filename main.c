@@ -36,7 +36,7 @@ int main()
 //printf("\n----------------------------------------------------------");
 
 
-printf( "\nStatus %d",  XmlReadBlockWithAttributes("MQ","Type","\"O2\"","IDS_2.xml",result));
+printf( "\nStatus %d",  XmlReadBlockWithAttributes("<MQ ","Type=","\"O2\"","IDS_2.xml",result));
 printf("\nResult length %d\n",strlen(result));
 printf("Result:\n%s",result);
 printf("\n-----------------------------------------------------------");

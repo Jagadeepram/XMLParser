@@ -53,3 +53,14 @@ int ReadBlockWithAttribute(char ch,attributeParam* attParam,int attNo,char* resu
 int ReadBlock(char ch,char* block,char* result);
 //U8 ParseXMLData(char*ch, XmlParserStruct& parserStruct, char* result);
 //void ReadProbeXMLData();
+
+
+typedef enum
+{
+PARSE_STATE_NONE = 0,
+PARSE_STATE_START,
+PARSE_STATE_READ,
+PARSE_STATE_ANALYSE,
+PARSE_STATE_STORE
+}XmlState ;
+int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, char* result);
