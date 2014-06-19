@@ -1,2 +1,55 @@
 <?xml version="1.0"?>
-<IDS xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://rti.se/develop/xml-schemas/IDS.xsd" Type="full" StructureVersion="3.0"><Data><Det Type="PBCA" Serial="1324" Caption=""/><Det Type="PiranhaMAS-2" Serial="53443" Caption=""><MQ Type="O1"><Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE"><Cu Unit="A">1e06</Cu></Cal></MQ><MQ Type="O2"><Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE"><Cu Unit="V">1e09</Cu></Cal></MQ></Det><Det Type="PiranhaMAS-3" Serial="4432" Caption=""><MQ Type="O2"><Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE"><Cu Unit="V">1e09</Cu></Cal></MQ><MQ Type="O1"><Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE"><Cu Unit="A">1e06</Cu></Cal></MQ></Det><Det Type="MAS-3B" Serial="2345" Caption=""><MQ Type="O1"><Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE"><Cu Unit="A">2e06</Cu></Cal></MQ></Det><Det Type="PiranhaMAS-1" Serial="3433" Caption=""><MQ Type="O2"><Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE"><Cu Unit="V">4e09</Cu></Cal></MQ></Det><Det Type="PiranhaLight" Serial="2" Caption=""><MQ Type="L2"><Cal Allowed="Cu" Date="2014-03-14" Lab="RTISE"><Cu Unit="lx">2e09</Cu></Cal></MQ><MQ Type="L1"><Cal Allowed="Cu" Date="2014-03-14" Lab="RTISE"><Cu Unit="cd/m2">1e09</Cu></Cal></MQ></Det></Data></IDS>
+<IDS xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://rti.se/develop/xml-schemas/IDS.xsd" Type="full" StructureVersion="3.0">
+<Data>
+	<Det Type="PBCA" Serial="1324" Caption=""/>
+	<Det Type="PiranhaMAS-2" Serial="53443" Caption="">
+	    <MQ Type="O1">
+		<Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE">
+			<Cu Unit="A">1e06</Cu></Cal>
+	    </MQ>
+	    <MQ Type="O2">
+		<Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE">
+			<Cu Unit="V">1e09</Cu>
+		</Cal>
+	    </MQ>
+	</Det>
+	<Det Type="PiranhaMAS-3" Serial="4432" Caption="">
+		<MQ Type="O2">
+			<Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE">
+				<Cu Unit="V">1e09</Cu>
+			</Cal>
+		</MQ>
+		<MQ Type="O1">
+			<Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE">
+				<Cu Unit="A">1e06</Cu>
+			</Cal>
+		</MQ>
+	</Det>
+	<Det Type="MAS-3B" Serial="2345" Caption="">
+		<MQ Type="O1">
+			<Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE">
+				<Cu Unit="A">2e06</Cu>
+			</Cal>
+		</MQ>
+	</Det>
+	<Det Type="PiranhaMAS-1" Serial="3433" Caption="">
+		<MQ Type="O2">
+			<Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE">
+				<Cu Unit="V">4e09</Cu>
+			</Cal>
+		</MQ>
+	</Det>
+	<Det Type="PiranhaLight" Serial="2" Caption="">
+		<MQ Type="L2">
+			<Cal Allowed="Cu" Date="2014-03-14" Lab="RTISE">
+				<Cu Unit="lx">2e09</Cu>
+			</Cal>
+		</MQ>
+		<MQ Type="L1">
+			<Cal Allowed="Cu" Date="2014-03-14" Lab="RTISE">
+				<Cu Unit="cd/m2">1e09</Cu>
+			</Cal>
+		</MQ>
+	</Det>
+</Data>
+</IDS>

@@ -111,14 +111,19 @@ int XmlReadBlockWithAttributes(char* block, char* attribute, char* key,char* fil
     FILE *fp;
     char ch;
     int status;
-    attributeParam attParam[2];
+    attributeParam attParam[3];
 
+    attParam[0].block = "Det";
     attParam[0].attribute = "Type";
-    attParam[0].block = "Det";//"MQ";//
     attParam[0].key = "\"PiranhaMAS-3\"";
-    attParam[1].attribute = attribute;
+
     attParam[1].block = block;
+    attParam[1].attribute = attribute;
     attParam[1].key = key;
+
+    attParam[2].block = "Cu";
+    attParam[2].attribute = "Unit";
+    attParam[2].key = "\"A\"";
 
     // Open the file.
     if( (fp=(FILE *)fopen(fileName,"r")) == NULL)
@@ -126,7 +131,7 @@ int XmlReadBlockWithAttributes(char* block, char* attribute, char* key,char* fil
 
     do {
         ch = getc(fp);
-        status=ReadBlockWithAttribute(ch,attParam,2,result);
+        status=ReadBlockWithAttribute(ch,attParam,3,result);
     } while(ch!=EOF && status == 0);
 
 //    printf("\nBlock: %s\n",block);

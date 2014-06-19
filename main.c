@@ -40,14 +40,14 @@ printf( "\nStatus %d",  XmlReadBlockWithAttributes("MQ","Type","\"O2\"","IDS_2.x
 printf("\nResult length %d\n",strlen(result));
 printf("Result:\n%s",result);
 printf("\n-----------------------------------------------------------");
-printf( "\nStatus %d",  XmlReadBlockWithAttribute("MQ","Type","\"M11\"","IDS_2.xml",result));
-printf("\nResult length %d\n",strlen(result));
-printf("Result:\n%s",result);
-printf("\n----------------------------------------------------------");
-printf( "\nStatus %d",  XmlReadBlockWithAttributes("MQ","Type","\"O1\"","IDS_2.xml",result));
-printf("\nResult length %d\n",strlen(result));
-printf("Result:\n%s",result);
-printf("\n----------------------------------------------------------");
+//printf( "\nStatus %d",  XmlReadBlockWithAttribute("MQ","Type","\"M11\"","IDS_2.xml",result));
+//printf("\nResult length %d\n",strlen(result));
+//printf("Result:\n%s",result);
+//printf("\n----------------------------------------------------------");
+//printf( "\nStatus %d",  XmlReadBlockWithAttributes("MQ","Type","\"O1\"","IDS_2.xml",result));
+//printf("\nResult length %d\n",strlen(result));
+//printf("Result:\n%s",result);
+//printf("\n----------------------------------------------------------");
 
 
 

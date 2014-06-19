@@ -126,10 +126,9 @@ int ReadBlockWithAttribute(char ch,attributeParam* attParam,int attNo,char* resu
     static bool elementStored;
     char *posOfEndTag;
     static attIndex=0;
-    static char lastChar;
-    static DataStorageState storeContents = DATASTORGAE_STATUS_STOP;
+    static char lastChar = 0;
+    static DataStorageState storeContents = DATASTORGAE_STATUS_NONE;
 
-//    printf("%c",ch);
     switch (parserState)
     {
         case STATE_START_BLOCK :
@@ -232,7 +231,7 @@ int ReadBlockWithAttribute(char ch,attributeParam* attParam,int attNo,char* resu
 //                printf("Strlen of result: %d\n",strlen(result));
 //                printf("result: %s\n",result);
 //                printf("key: %s\n",attParam[attIndex].key);
-//                printf("Result of strcmp: %d\n",strstr(result,attParam[attIndex].key));
+//                printf("Result of strstr: %d\n",strstr(result,attParam[attIndex].key));
                 if(strstr(result,attParam[attIndex].key) != NULL)
                 {
                     attIndex++;
@@ -256,18 +255,17 @@ int ReadBlockWithAttribute(char ch,attributeParam* attParam,int attNo,char* resu
                 }
                 // TAGEND when "</" found (avoid storing space after end tag)
                 else if(lastChar == '<' && ch == '/')
-                  storeContents = DATASTORGAE_STATUS_TAGENDED;
+                   storeContents = DATASTORGAE_STATUS_TAGENDED;
                 // TAGEND when "</ .... >" found (avoid storing space after end tag)
                 else if(lastChar == '>' && storeContents == DATASTORGAE_STATUS_TAGENDED)
                     storeContents = DATASTORGAE_STATUS_STOP;
                 // TAGEND when "<" found after "<!--><"
                 // or "</....><" (avoid storing space before start tag.)
                 if(ch == '<' && storeContents == DATASTORGAE_STATUS_STOP)
-                   storeContents = DATASTORGAE_STATUS_NONE;
+                    storeContents = DATASTORGAE_STATUS_NONE;
 
                 if((storeContents !=DATASTORGAE_STATUS_STOP))
                     result[elementIndex++] = ch;
-
                 lastChar = ch;
             }
             else
@@ -296,7 +294,7 @@ int ReadBlockWithAttribute(char ch,attributeParam* attParam,int attNo,char* resu
                         elementIndex =0;
                         lastChar = 0;
                         parserState  = STATE_START_BLOCK;
-                        storeContents = DATASTORGAE_STATUS_STOP;
+                        storeContents = DATASTORGAE_STATUS_NONE;
                         attIndex =0;
                         return 1;
                     }

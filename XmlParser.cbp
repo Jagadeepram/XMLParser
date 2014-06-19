@@ -34,6 +34,7 @@
 		<Unit filename="CobiaProbes.xml" />
 		<Unit filename="IDG2.txt" />
 		<Unit filename="IDS.xml" />
+		<Unit filename="IDS_2.xml" />
 		<Unit filename="MQExt.xml" />
 		<Unit filename="MQInt.xml" />
 		<Unit filename="PiranhaDose.xml" />
