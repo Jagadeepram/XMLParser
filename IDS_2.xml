@@ -25,9 +25,9 @@
 			</Cal>
 		</MQ>
 	</Det>
-	<Det Type="MAS-3B" Serial="2345" Caption="">
-		<MQ Type="O1">
-			<Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE">
+	<Det Type="MAS-3B" Serial="2345" Caption="">there are some issues
+		<MQ Type="O1">why some text and some more as well
+			<Cal Allowed="Cu" Date="2014-02-10" Lab="RTISE">Lets find it out.
 				<Cu Unit="A">2e06</Cu>
 			</Cal>
 		</MQ>

@@ -323,6 +323,33 @@ char *EndTag (char* tag)
     return endBlock;
 }
 
+
+static XmlState xmlState = PARSE_STATE_START;
+static char buff[500]; // store the tag
+static int buffIndex=0;
+static int resultIndex = 0;
+static int activeAtt= 0;
+static int dataFound= 0; // Boolean
+static int activateStore = 0; // Boolean
+
+void InitParser(void)
+{
+    buffIndex=0;
+    resultIndex = 0;
+    activeAtt= 0;
+    dataFound= 0; // Boolean
+    xmlState = PARSE_STATE_START;
+}
+bool IsAlphaNum(char ch)
+{
+    bool ret =false;
+    if( ( ch>='0'&& ch <='9' ) ||
+        (ch >= 'a' && ch <= 'z') ||
+       (ch >= 'A' && ch <= 'Z')
+       || ch == '<' || ch == ' ')
+       ret = true;
+    return ret;
+}
 //PARSE_STATE_NONE = 0,
 //PARSE_STATE_START,
 //PARSE_STATE_READ,
@@ -333,30 +360,30 @@ char *EndTag (char* tag)
 // Attributes starts with "attributes="
 int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, char* result)
 {
-    static XmlState xmlState = PARSE_STATE_START;
-    static char buff[500]; // store the tag
-    static int buffIndex=0;
-    static int resultIndex = 0;
-    static int activeAtt= 0;
     switch(xmlState)
     {
     case PARSE_STATE_START:
         buffIndex = 0;
+//        printf("%c",ch);
         if(ch == '<')
         {
             buff[buffIndex++] = ch;
             xmlState = PARSE_STATE_READ;
         }
+        if(activateStore)
+        {
+            if(IsAlphaNum(ch)  ||( result[resultIndex-1] && ch == ' '))
+                result[resultIndex++]=ch;
+        }
         break;
     case PARSE_STATE_READ:
         if(buffIndex < 500)
             buff[buffIndex++] = ch;
-//        printf("%c",ch);
+        if(activateStore)
+            result[resultIndex++]=ch;
          if(ch == '>')
          {
-
              buff[buffIndex]= '\0';
-//               printf("%s",buff);
             // Analyse the string starting from "<" to ">"
             int i,attFound;
             char attAndKey[200];
@@ -368,12 +395,12 @@ int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, cha
                      attFound |= (strstr(buff,EndTag(attParam[i].block))? 1:0);
                 if(attFound)
                 {
-                    xmlState = PARSE_STATE_ANALYSE;
+                    xmlState = PARSE_STATE_STOP_ANALYSE;
                     activeAtt = i;
-                    printf("DELETED %s",buff);
+//                    printf("DELETED %s",buff);
+                    break;
                 }
             }
-
             // Search for a start block with right attributes
             for (i=0; (i< (activeAtt+1) && i<(attNo)) ; i ++)
             {
@@ -392,24 +419,146 @@ int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, cha
                    ((attParam[i].attribute!= NULL) &&
                    (attParam[i].key != NULL))))
                 {
-                     xmlState = PARSE_STATE_ANALYSE;
+                     xmlState = PARSE_STATE_START_ANALYSE;
                      activeAtt = i+1;
-                     printf("FOUND: %s", buff);
-
+                     if(activeAtt == attNo)
+                        dataFound = 1;
+//                        printf("%s :\n", result);
+//                     printf("FOUND: %s", buff);
+                     break;
                 }
-//                printf("activeAtt %d",i );
             }
             if(xmlState == PARSE_STATE_READ)
                 xmlState = PARSE_STATE_START;
          }
         break;
-    case PARSE_STATE_ANALYSE:
-//        printf("%s",buff);
+    case PARSE_STATE_START_ANALYSE:
+        if(activeAtt == attResult)
+        {
+            resultIndex = 0;
+            strcpy(result, buff);
+            resultIndex = strlen(result);
+            activateStore = 1;
+        }
+        if(activateStore)
+        {
+            result[resultIndex++] = ch;
+        }
+        xmlState = PARSE_STATE_START;
+        break;
+    case PARSE_STATE_STOP_ANALYSE:
+         if(activeAtt+1 == attResult)
+         {
+             activateStore = 0;
+             if(dataFound)
+             {
+                result[resultIndex] = '\0';
+                return 1;
+             }
+         }
         xmlState = PARSE_STATE_START;
         break;
     }
     return 0;
 }
+
+
+//int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, char* result)
+//{
+//    static XmlState xmlState = PARSE_STATE_START;
+//    static char buff[500]; // store the tag
+//    static int buffIndex=0;
+//    static int resultIndex = 0;
+//    static int activeAtt= 0;
+//    static int dataFound= 0; // Boolean
+//    static int activateStore = 0; // Boolean
+//
+//    switch(xmlState)
+//    {
+//    case PARSE_STATE_START:
+//        buffIndex = 0;
+//        if(ch == '<')
+//        {
+//            buff[buffIndex++] = ch;
+//            xmlState = PARSE_STATE_READ;
+//        }
+//        break;
+//    case PARSE_STATE_READ:
+//        if(buffIndex < 500)
+//            buff[buffIndex++] = ch;
+////        printf("%c",ch);
+//         if(ch == '>')
+//         {
+//
+//             buff[buffIndex]= '\0';
+////               printf("%s",buff);
+//            // Analyse the string starting from "<" to ">"
+//            int i,attFound;
+//            char attAndKey[200];
+//            // search for a stop block
+//            for(i=0; i< activeAtt ; i ++)
+//            {
+//                attFound = 0;
+//                if(attParam[i].block != NULL)
+//                     attFound |= (strstr(buff,EndTag(attParam[i].block))? 1:0);
+//                if(attFound)
+//                {
+//                    xmlState = PARSE_STATE_STOP_ANALYSE;
+//                    activeAtt = i;
+//                    printf("DELETED %s",buff);
+//                }
+//            }
+//
+//            // Search for a start block with right attributes
+//            for (i=0; (i< (activeAtt+1) && i<(attNo)) ; i ++)
+//            {
+//                attFound = 1;
+//                if(attParam[i].block != NULL)
+//                    attFound &= (strstr(buff,attParam[i].block)? 1:0);
+//                // Concatenate attribute and key and search in buff.
+//                if(attParam[i].attribute != NULL && attParam[i].key != NULL)
+//                {
+//                    strcpy(attAndKey, attParam[i].attribute);
+//                    strcat(attAndKey, attParam[i].key );
+//                     attFound &= (strstr(buff,attAndKey)? 1:0);
+//                }
+//                if((attFound == 1) &&
+//                   ((attParam[i].block != NULL) ||
+//                   ((attParam[i].attribute!= NULL) &&
+//                   (attParam[i].key != NULL))))
+//                {
+//                    xmlState = PARSE_STATE_START_ANALYSE;
+//                     activeAtt = i+1;
+//                     printf("FOUND: %s", buff);
+//
+//                }
+////                printf("activeAtt %d",i );
+//            }
+//            if(xmlState == PARSE_STATE_READ)
+//                xmlState = PARSE_STATE_START;
+//         }
+//        break;
+//    case PARSE_STATE_START_ANALYSE:
+//        if(activeAtt == attResult)
+//        {
+//            strcpy(result, buff);
+//            resultIndex = strlen(result);
+//            activateStore = 1;
+//            result[resultIndex++] = ch;
+//        }
+//        xmlState = PARSE_STATE_START;
+//        break;
+//    case PARSE_STATE_STOP_ANALYSE:
+//         if(activeAtt == attResult)
+//            activateStore = 0;
+//        xmlState = PARSE_STATE_START;
+//        break;
+//    case PARSE_STATE_STORE:
+//        xmlState = PARSE_STATE_START;
+//        break;
+//    }
+//    return 0;
+//}
 
 int ReadBlock(char ch,char* block,char* result)
 {

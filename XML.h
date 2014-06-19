@@ -57,10 +57,11 @@ int ReadBlock(char ch,char* block,char* result);
 
 typedef enum
 {
-PARSE_STATE_NONE = 0,
-PARSE_STATE_START,
-PARSE_STATE_READ,
-PARSE_STATE_ANALYSE,
-PARSE_STATE_STORE
+    PARSE_STATE_START=0,
+    PARSE_STATE_READ,
+    PARSE_STATE_START_ANALYSE,
+    PARSE_STATE_STOP_ANALYSE,
+    PARSE_STATE_STORE
 }XmlState ;
 int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, char* result);
+void InitParser(void);
