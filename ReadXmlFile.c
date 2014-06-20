@@ -111,6 +111,17 @@ int XmlReadBlockWithAttributes(char* fileName,attributeParam* attParam,int attNo
     FILE *fp;
     char ch;
     int status;
+//    typedef struct
+//{
+//    int noOfAttributes; // No of attributes to search.
+//    int dataOfAttribute; // Index of the attribute who's data is fetched.
+//    XMLResultType resultType; // Type of data (only tag, body and both)
+//}attributeProperty;
+
+    attributeProperty attProperty;
+    attProperty.dataOfAttribute = 2; // Pull data from second search element.
+    attProperty.noOfAttributes = 3; // Totally three search elements are used.
+    attProperty.resultType =XMLDATA_TAG_BODY; // Get tag and body.
 //    attributeParam attParam[3];
 //
 //    attParam[0].block = "<Det ";

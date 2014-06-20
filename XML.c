@@ -359,6 +359,8 @@ bool IsAlphaNum(char ch)
 // Block should start with "<" and end with space (" ") if it has attributes
 // "<tag " or "<tag>"
 // Attributes starts with "attributes="
+
+//int ExtractXMLData(char ch,searchParameters* searchParam,searchProperty *searchProperty, char* result);
 int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, char* result)
 {
     switch(xmlState)

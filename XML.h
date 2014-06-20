@@ -41,12 +41,7 @@ typedef enum {
 } DataStorageState;
 //
 
-typedef struct
-{
-    char *block;
-    char *attribute;
-    char *key;
-} attributeParam;
+
 //void GetElement(char *element , char *search, char *result, U16 maxLen);
 char* GetEndTag(char* block);
 int ReadBlockWithAttribute(char ch,attributeParam* attParam,int attNo,char* result);
@@ -63,5 +58,26 @@ typedef enum
     PARSE_STATE_STOP_ANALYSE,
     PARSE_STATE_STORE
 }XmlState ;
-int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, char* result);
+typedef enum
+{
+    XMLDATA_TAG =0,
+    XMLDATA_BODY,
+    XMLDATA_TAG_BODY
+}XMLResultType;
+
+typedef struct
+{
+    char *tag; // block
+    char *attribute;
+    char *key;
+} _searchParameters;
+
+typedef struct
+{
+    int noOfSearchParam; // No of attributes to search.
+    int dataOfSearchParam; // Index of the attribute who's data is fetched.
+    XMLResultType resultType; // Type of data (only tag, body and both)
+}_searchProperty;
+
+int ExtractXMLData(char ch,searchParameters* searchParam,searchProperty *searchProperty, char* result);
 void InitParser(void);
