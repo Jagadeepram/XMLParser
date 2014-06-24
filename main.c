@@ -21,16 +21,35 @@ int main()
 
 // Test for CobiaProbes.xml
 //<Probe Type="Magna3cc (PBCA)"> <DisplayCaption>Chamber Adapter</DisplayCaption> </Probe>
+_searchParameters searchParam[3];
+_searchProperty searchProperty;
 
-printf( "\nStatus %d",  XmlReadBlockWithAttributes("<MQ ","Type=","\"O1\"","IDS_2.xml",result));
+searchParam[0].tag ="<Det ";
+searchParam[0].attribute ="Type=";
+searchParam[0].key ="\"PiranhaMAS-2\"";
+
+searchParam[1].tag ="<MQ ";
+searchParam[1].attribute = "Type=";
+searchParam[1].key = "\"O1\"";
+
+searchParam[2].tag = NULL;
+searchParam[2].attribute = "Unit=";
+searchParam[2].key ="\"A\"";
+
+searchProperty.noOfSearchParam=3;
+// Data search parameter should not point to the tag
+// which is NULL
+searchProperty.dataOfSearchParam=3;
+
+printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"IDS_2.xml",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
 printf("\nResult length %d\n",strlen(result));
 printf("Result:\n%s",result);
 printf("\n-----------------------------------------------------------");
 
-printf( "\nStatus %d", XmlReadBlock("<MAM","MQInt.xml", result));
-printf("\nResult length %d\n",strlen(result));
-printf("Result:\n%s",result);
-printf("\n-----------------------------------------------------------");
+//printf( "\nStatus %d", XmlReadBlock("<MAM","MQInt.xml", result));
+//printf("\nResult length %d\n",strlen(result));
+//printf("Result:\n%s",result);
+//printf("\n-----------------------------------------------------------");
 
 
 

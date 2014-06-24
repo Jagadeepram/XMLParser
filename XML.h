@@ -1,3 +1,8 @@
+#ifndef XML_H
+#define XML_H
+
+
+
 #define MAX_STORE_ELEMENT_SIZE 50
 #define MAX_SEARCH_ELEMENT 5000
 
@@ -44,8 +49,8 @@ typedef enum {
 
 //void GetElement(char *element , char *search, char *result, U16 maxLen);
 char* GetEndTag(char* block);
-int ReadBlockWithAttribute(char ch,attributeParam* attParam,int attNo,char* result);
-int ReadBlock(char ch,char* block,char* result);
+//int ReadBlockWithAttribute(char ch,attributeParam* attParam,int attNo,char* result);
+//int ReadBlock(char ch,char* block,char* result);
 //U8 ParseXMLData(char*ch, XmlParserStruct& parserStruct, char* result);
 //void ReadProbeXMLData();
 
@@ -79,5 +84,8 @@ typedef struct
     XMLResultType resultType; // Type of data (only tag, body and both)
 }_searchProperty;
 
-int ExtractXMLData(char ch,searchParameters* searchParam,searchProperty *searchProperty, char* result);
+int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searchProperty, char* result, U8 resLen);
 void InitParser(void);
+void EndParser(void);
+
+#endif // XML_H

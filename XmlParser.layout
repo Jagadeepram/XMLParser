@@ -3,17 +3,17 @@
 	<ActiveTarget name="Debug" />
 	<File name="ReadXmlFile.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3348" topLine="97" />
+			<Cursor1 position="2880" topLine="97" />
 		</Cursor>
 	</File>
-	<File name="ReadXmlFile.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="task.txt" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="109" topLine="0" />
+			<Cursor1 position="77" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="IDS_2.xml" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ReadXmlFile.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="469" topLine="0" />
+			<Cursor1 position="214" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Readme.txt" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -21,29 +21,14 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="MQExt.xml" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="XML.c" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3490" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="XML.c" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="12234" topLine="341" />
-		</Cursor>
-	</File>
-	<File name="MQInt.xml" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1901" topLine="0" />
+			<Cursor1 position="14123" topLine="355" />
 		</Cursor>
 	</File>
 	<File name="XML.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PiranhaDose.xml" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1186" topLine="0" />
+			<Cursor1 position="1217" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="cobiatexts.xml" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -51,14 +36,34 @@
 			<Cursor1 position="2135" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="CobiaProbes.xml" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1622" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="672" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="442" topLine="0" />
+			<Cursor1 position="484" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="IDS_2.xml" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1129" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="MQExt.xml" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3490" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="MQInt.xml" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="368" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PiranhaDose.xml" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1186" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="CobiaProbes.xml" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1141" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="IDG2.txt" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
