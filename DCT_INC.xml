@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <IDS xmlns="http://www.rti.se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rti.se http://rti.se/develop/xml-schemas/IDS.xsd" Type="full" StructureVersion="3.0">
 	<Data>
-		<Det Type="PBCA" Serial="123456" Caption=""><MQ Type="O1"><Cal Allowed="Cu" Date="2014-06-17" Lab="RTISE"><Cu Unit="A">3.8e06</Cu></Cal></MQ></Det><Det Type="DCT10 (PBCA)" Serial="98765" Caption=""><MQ Type="R3"><Cal Allowed="ChCu" Date="2014-06-17" Lab="RTISE"><Ch Unit="Gym">1e04</Ch></Cal></MQ><MQ Type="R3"><Cal Allowed="ChCu" Date="2014-06-17" Lab="RTISE"><Ch Unit="Gy">2e06</Ch></Cal></MQ></Det></Data>
+		<Det Type="PBCA" Serial="123456" Caption=""><MQ Type="O1"><Cal Allowed="Cu" Date="2014-06-17" Lab="RTISE"><Cu Unit="A">3.8e06</Cu></Cal></MQ></Det><Det Type="DCT10 (PBCA)" Serial="98765" Caption=""><MQ Type="R3"><Cal Allowed="ChCu" Date="2014-06-24" Lab="RTISE"><ChCu Unit="Gym">1e04</ChCu></Cal></MQ><MQ Type="R3"><Cal Allowed="ChCu" Date="2014-06-17" Lab="RTISE"><Cu Unit="Gy">2e06</Cu></Cal></MQ></Det></Data>
 </IDS>

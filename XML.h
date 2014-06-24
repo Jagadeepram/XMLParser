@@ -11,6 +11,7 @@
 
 typedef int bool;
 typedef unsigned int U8;
+typedef unsigned int U16;
 typedef int S8;
 
 /**
@@ -66,7 +67,7 @@ typedef enum
 typedef enum
 {
     XMLDATA_TAG =0,
-    XMLDATA_BODY,
+//    XMLDATA_BODY,
     XMLDATA_TAG_BODY
 }XMLResultType;
 

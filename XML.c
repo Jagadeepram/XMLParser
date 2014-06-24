@@ -327,16 +327,16 @@ char *EndTag (char* tag)
 #define PARSER_BUFFER_LENGTH 500
 static XmlState xmlState = PARSE_STATE_START;
 static char *pBuff = NULL; // store the tag
-static int buffIndex=0;
-static int resultIndex = 0;
-static int activeAtt= 0;
-static int dataFound= 0; // Boolean
-static int activateStore = 0; // Boolean
+static U16 buffIndex=0;
+static U16 resIndex = 0;
+static U8 activeAtt= 0;
+static U8 dataFound= 0; // Boolean
+static U8 activateStore = 0; // Boolean
 
 void InitParser(void)
 {
     buffIndex=0;
-    resultIndex = 0;
+    resIndex = 0;
     activeAtt= 0;
     activateStore = 0;
     dataFound= 0; // Boolean
@@ -375,19 +375,20 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
     switch(xmlState)
     {
     case PARSE_STATE_START:
-        buffIndex = 0;
         if(ch == '<')
         {
+            buffIndex = 0;
             if(buffIndex < PARSER_BUFFER_LENGTH)
                 pBuff[buffIndex++] = ch;
             xmlState = PARSE_STATE_READ;
         }
         if(activateStore)
         {
-            if(IsAlphaNum(ch)||( result[resultIndex-1] != ' ' && ch == ' '))
+//            if(IsAlphaNum(ch)||( result[resIndex-1] != ' ' && ch == ' '))
+            if(ch >= ' ')
             {
-                if(resultIndex < resLen)
-                    result[resultIndex++]=ch;
+                if(resIndex < resLen)
+                    result[resIndex++]=ch;
                 else
                     return -1;
             }
@@ -395,29 +396,37 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
         break;
     case PARSE_STATE_READ:
         if(buffIndex < PARSER_BUFFER_LENGTH)
+        {
             pBuff[buffIndex++] = ch;
+        }
         if(activateStore)
-            if(resultIndex < resLen)
-                result[resultIndex++]=ch;
+            if(resIndex < resLen)
+            {
+                result[resIndex++]=ch;
+            }
             else
                 return -1;
          if(ch == '>')
          {
              if(buffIndex < PARSER_BUFFER_LENGTH)
                 pBuff[buffIndex]= '\0';
+//            printf("%s",pBuff);
+            buffIndex = 0;
             // Analyse the string starting from "<" to ">"
             int i,attFound;
             char attAndKey[200];
             // search for a stop block
             for(i=0; i< activeAtt ; i ++)
             {
-                attFound = 0;
+                attFound = 1;
                 if(searchParam[i].tag != NULL)
-                     attFound |= (strstr(pBuff,EndTag(searchParam[i].tag))? 1:0);
+                     attFound &= (strstr(pBuff,EndTag(searchParam[i].tag))? 1:0);
                 if(attFound)
                 {
                     xmlState = PARSE_STATE_STOP_ANALYSE;
                     activeAtt = i;
+//                    printf("DESCEND %s ",pBuff);
+//                    printf("TAGINDEX %d \n",activeAtt);
                     break;
                 }
             }
@@ -432,7 +441,7 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
                 {
                     strcpy(attAndKey, searchParam[i].attribute);
                     strcat(attAndKey, searchParam[i].key );
-                     attFound &= (strstr(pBuff,attAndKey)? 1:0);
+                    attFound &= (strstr(pBuff,attAndKey)? 1:0);
                 }
                 if((attFound == 1) &&
                    ((searchParam[i].tag != NULL) ||
@@ -444,7 +453,10 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
                      if(activeAtt == searchProperty->noOfSearchParam)
                      {
                         dataFound = 1;
+//                        printf("DATA FOUND !");
                      }
+//                     printf("ASCEND %s ",pBuff);
+//                     printf("TAGINDEX %d\n",activeAtt);
                      break;
                 }
             }
@@ -455,22 +467,32 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
     case PARSE_STATE_START_ANALYSE:
         if(activeAtt == searchProperty->dataOfSearchParam)
         {
-            resultIndex = 0;
-            if((resultIndex + strlen(pBuff))< resLen)
+            resIndex = 0;
+            if((resIndex + strlen(pBuff))< resLen)
                 strcpy(result, pBuff);
             else
                 return -1;
-            resultIndex = strlen(result);
+            resIndex = strlen(result);
             activateStore = 1;
+
+            if(searchProperty->resultType == XMLDATA_TAG)
+            {
+                result[resIndex]='\0';
+                return 1;
+            }
         }
         if(activateStore)
         {
-            if(resultIndex< resLen)
-                result[resultIndex++] = ch;
+            if(resIndex< resLen)
+                result[resIndex++] = ch;
             else
                 return -1;
         }
-        xmlState = PARSE_STATE_START;
+        pBuff[buffIndex++]=ch;
+        if(ch == '<')
+            xmlState = PARSE_STATE_READ;
+        else
+            xmlState = PARSE_STATE_START;
         break;
     case PARSE_STATE_STOP_ANALYSE:
          if(activeAtt+1 == searchProperty->dataOfSearchParam)
@@ -478,11 +500,15 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
              activateStore = 0;
              if(dataFound)
              {
-                result[resultIndex] = '\0';
+                result[resIndex] = '\0';
                 return 1;
              }
          }
-        xmlState = PARSE_STATE_START;
+        pBuff[buffIndex++]=ch;
+        if(ch == '<')
+            xmlState = PARSE_STATE_READ;
+        else
+            xmlState = PARSE_STATE_START;
         break;
     }
     return 0;
@@ -494,7 +520,7 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
 //    static XmlState xmlState = PARSE_STATE_START;
 //    static char buff[500]; // store the tag
 //    static int buffIndex=0;
-//    static int resultIndex = 0;
+//    static int resIndex = 0;
 //    static int activeAtt= 0;
 //    static int dataFound= 0; // Boolean
 //    static int activateStore = 0; // Boolean
@@ -568,9 +594,9 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
 //        if(activeAtt == attResult)
 //        {
 //            strcpy(result, buff);
-//            resultIndex = strlen(result);
+//            resIndex = strlen(result);
 //            activateStore = 1;
-//            result[resultIndex++] = ch;
+//            result[resIndex++] = ch;
 //        }
 //        xmlState = PARSE_STATE_START;
 //        break;
