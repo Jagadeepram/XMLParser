@@ -82,7 +82,7 @@ searchParam[2].key ="\"A\"";
 
 // Data search parameter should not point to the tag which is NULL
 searchProperty.noOfSearchParam=3;
-searchProperty.dataOfSearchParam=1;
+searchProperty.dataOfSearchParam=2;
 searchProperty.resultType = XMLDATA_BODY; // Extract tag only.
 printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"IDS_2.xml",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
 printf("\nResult length %d\n",strlen(result));
