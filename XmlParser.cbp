@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="CobiaProbes.xml" />
+		<Unit filename="DCT_INC.xml" />
 		<Unit filename="IDG2.txt" />
 		<Unit filename="IDS.xml" />
 		<Unit filename="IDS_2.xml" />
@@ -48,9 +49,14 @@
 		</Unit>
 		<Unit filename="XML.h" />
 		<Unit filename="cobiatexts.xml" />
+		<Unit filename="light.xml" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="mam1.xml" />
+		<Unit filename="mam2.xml" />
+		<Unit filename="mam3.xml" />
+		<Unit filename="task.txt" />
 		<Extensions>
 			<code_completion />
 			<envvars />

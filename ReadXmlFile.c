@@ -106,7 +106,8 @@
 #include "ReadXmlFile.h"
 #include "XML.h"
 
-int XmlReadBlockWithAttributes(char* fileName,attributeParam* attParam,int attNo,int attResult,char *result)
+
+int XmlReadBlockWithAttributes(char* fileName,_searchParameters* searchParam,_searchProperty *searchProperty,char *result,U8 resLen)
 {
     FILE *fp;
     char ch;
@@ -118,10 +119,10 @@ int XmlReadBlockWithAttributes(char* fileName,attributeParam* attParam,int attNo
 //    XMLResultType resultType; // Type of data (only tag, body and both)
 //}attributeProperty;
 
-    attributeProperty attProperty;
-    attProperty.dataOfAttribute = 2; // Pull data from second search element.
-    attProperty.noOfAttributes = 3; // Totally three search elements are used.
-    attProperty.resultType =XMLDATA_TAG_BODY; // Get tag and body.
+//    attributeProperty attProperty;
+//    attProperty.dataOfAttribute = 2; // Pull data from second search element.
+//    attProperty.noOfAttributes = 3; // Totally three search elements are used.
+//    attProperty.resultType =XMLDATA_TAG_BODY; // Get tag and body.
 //    attributeParam attParam[3];
 //
 //    attParam[0].block = "<Det ";
@@ -142,8 +143,7 @@ int XmlReadBlockWithAttributes(char* fileName,attributeParam* attParam,int attNo
     InitParser();
     do {
         ch = getc(fp);
-       // status=ReadBlockWithAttribute(ch,attParam,3,result);
-       status = ExtractXMLData(ch,attParam,attNo,attResult,result);
+       status = ExtractXMLData(ch,searchParam,searchProperty,result,resLen);
     } while(ch!=EOF && status == 0);
 
 //    printf("\nBlock: %s\n",block);
@@ -151,95 +151,95 @@ int XmlReadBlockWithAttributes(char* fileName,attributeParam* attParam,int attNo
 //    printf("key: %s\n",key);
 //    printf("result: %s\n",result);
     fclose(fp);
-
+    EndParser();
     return status;
 }
 
 
 int XmlReadBlockWithAttribute(char* block, char* attribute, char* key,char* fileName, char *result)
 {
-    FILE *fp;
-    char ch;
-    int status;
-    attributeParam attParam[1];
-
-    attParam[0].attribute = attribute;
-    attParam[0].block = block;//"MQ";//
-    attParam[0].key = key;
-//    attParam[1].attribute = attribute;
-//    attParam[1].block = block;
-//    attParam[1].key = key;
-
-    // Open the file.
-    if( (fp=(FILE *)fopen(fileName,"r")) == NULL)
-        printf("File not found!\n");
-
-    do {
-        ch = getc(fp);
-        status=ReadBlockWithAttribute(ch,attParam,1,result);
-    } while(ch!=EOF && status == 0);
-
-//    printf("\nBlock: %s\n",block);
-//    printf("attribute: %s\n",attribute);
-//    printf("key: %s\n",key);
-//    printf("result: %s\n",result);
-    fclose(fp);
-
-    return status;
+//    FILE *fp;
+//    char ch;
+//    int status;
+//    attributeParam attParam[1];
+//
+//    attParam[0].attribute = attribute;
+//    attParam[0].block = block;//"MQ";//
+//    attParam[0].key = key;
+////    attParam[1].attribute = attribute;
+////    attParam[1].block = block;
+////    attParam[1].key = key;
+//
+//    // Open the file.
+//    if( (fp=(FILE *)fopen(fileName,"r")) == NULL)
+//        printf("File not found!\n");
+//
+//    do {
+//        ch = getc(fp);
+//        status=ReadBlockWithAttribute(ch,attParam,1,result);
+//    } while(ch!=EOF && status == 0);
+//
+////    printf("\nBlock: %s\n",block);
+////    printf("attribute: %s\n",attribute);
+////    printf("key: %s\n",key);
+////    printf("result: %s\n",result);
+//    fclose(fp);
+//
+//    return status;
 }
 int XmlReadBlockWithAttribute_array(char* block, char* attribute, char* key,char* fileName, char *result)
 {
-    char ch;
-    int status = 0;
-    int i=0;
-    // Open the file.
-    if(fileName == NULL)
-        return;
-     attributeParam attParam[1];
-
-    attParam[0].attribute = attribute;
-    attParam[0].block = block;//"MQ";//
-    attParam[0].key = key;
-
-//printf("%s",fileName);
-//printf(" Strlen of %d", strlen(fileName));
-//fileName[strlen(fileName)] = '\0';
-    do {
-        ch = fileName[i++];
-        status=ReadBlockWithAttribute(ch,attParam,1,result);
-    } while(ch!='\0' && status == 0);
-
-//    printf("\nBlock: %s\n",block);
-//    printf("attribute: %s\n",attribute);
-//    printf("key: %s\n",key);
-//    printf("result: %s\n",result);
-
-
-    return status;
+//    char ch;
+//    int status = 0;
+//    int i=0;
+//    // Open the file.
+//    if(fileName == NULL)
+//        return;
+//     attributeParam attParam[1];
+//
+//    attParam[0].attribute = attribute;
+//    attParam[0].block = block;//"MQ";//
+//    attParam[0].key = key;
+//
+////printf("%s",fileName);
+////printf(" Strlen of %d", strlen(fileName));
+////fileName[strlen(fileName)] = '\0';
+//    do {
+//        ch = fileName[i++];
+//        status=ReadBlockWithAttribute(ch,attParam,1,result);
+//    } while(ch!='\0' && status == 0);
+//
+////    printf("\nBlock: %s\n",block);
+////    printf("attribute: %s\n",attribute);
+////    printf("key: %s\n",key);
+////    printf("result: %s\n",result);
+//
+//
+//    return status;
 }
 
 int XmlReadBlock(char* block,char* fileName, char *result)
 {
-    FILE *fp;
-    char ch;
-    int status;
-    result[0]='\0';
-
-    attributeParam attParam[1];
-    attParam[0].attribute = NULL;
-    attParam[0].block = block;//"MQ";//
-    attParam[0].key = NULL;
-    InitParser();
-    // Open the file.
-    if( (fp=(FILE *)fopen(fileName,"r")) == NULL)
-        printf("File not found!\n");
-
-    do {
-        ch = getc(fp);
-       status = ExtractXMLData(ch,attParam,1,1,result);
-//        status = ReadBlock(ch,block, result);
-    } while(ch!=EOF && (status == 0));
-
-    fclose(fp);
-    return status;
+//    FILE *fp;
+//    char ch;
+//    int status;
+//    result[0]='\0';
+//
+//    attributeParam attParam[1];
+//    attParam[0].attribute = NULL;
+//    attParam[0].block = block;//"MQ";//
+//    attParam[0].key = NULL;
+//    InitParser();
+//    // Open the file.
+//    if( (fp=(FILE *)fopen(fileName,"r")) == NULL)
+//        printf("File not found!\n");
+//
+//    do {
+//        ch = getc(fp);
+//       status = ExtractXMLData(ch,attParam,1,1,result);
+////        status = ReadBlock(ch,block, result);
+//    } while(ch!=EOF && (status == 0));
+//
+//    fclose(fp);
+//    return status;
 }
