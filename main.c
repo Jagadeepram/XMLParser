@@ -39,13 +39,34 @@ searchParam[2].key ="\"A\"";
 // Data search parameter should not point to the tag which is NULL
 searchProperty.noOfSearchParam=3;
 searchProperty.dataOfSearchParam=2;
-searchProperty.resultType = XMLDATA_TAG_BODY; // Extract tag only.
+searchProperty.resultType = XMLDATA_BODY; // Extract tag only.
 
 printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"IDS_2.xml",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
 printf("\nResult length %d\n",strlen(result));
 printf("Result:\n%s",result);
 printf("\n-----------------------------------------------------------");
 
+searchParam[0].tag ="<Det ";
+searchParam[0].attribute ="Type=";
+searchParam[0].key ="\"PiranhaMAS-2\"";
+
+searchParam[1].tag ="<MQ ";
+searchParam[1].attribute = "Type=";
+searchParam[1].key = "\"O1\"";
+
+searchParam[2].tag = NULL;
+searchParam[2].attribute = "Unit=";
+searchParam[2].key ="\"A\"";
+
+// Data search parameter should not point to the tag which is NULL
+searchProperty.noOfSearchParam=3;
+searchProperty.dataOfSearchParam=2;
+searchProperty.resultType = XMLDATA_TAG_BODY; // Extract tag only.
+
+printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"IDS_2.xml",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
+printf("\nResult length %d\n",strlen(result));
+printf("Result:\n%s",result);
+printf("\n-----------------------------------------------------------");
 
 searchParam[0].tag ="<Det ";
 searchParam[0].attribute ="Type=";
@@ -62,7 +83,7 @@ searchParam[2].key ="\"A\"";
 // Data search parameter should not point to the tag which is NULL
 searchProperty.noOfSearchParam=3;
 searchProperty.dataOfSearchParam=1;
-searchProperty.resultType = XMLDATA_TAG_BODY; // Extract tag only.
+searchProperty.resultType = XMLDATA_BODY; // Extract tag only.
 printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"IDS_2.xml",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
 printf("\nResult length %d\n",strlen(result));
 printf("Result:\n%s",result);
@@ -71,7 +92,7 @@ printf("\n-----------------------------------------------------------");
 
 searchParam[0].tag ="<Probe ";
 searchParam[0].attribute ="Type=";
-searchParam[0].key ="\"PiranhaDose\"";
+searchParam[0].key ="\"Magna3cc (PBCA)\"";
 
 searchParam[1].tag ="<DisplayCaption";
 searchParam[1].attribute = NULL;
@@ -84,7 +105,7 @@ searchParam[2].key ="\"A\"";
 // Data search parameter should not point to the tag which is NULL
 searchProperty.noOfSearchParam=2;
 searchProperty.dataOfSearchParam=2;
-searchProperty.resultType = XMLDATA_TAG_BODY; // Extract tag only.
+searchProperty.resultType = XMLDATA_BODY; // Extract tag only.
 
 printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"CobiaProbes.xml",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
 printf("\nResult length %d\n",strlen(result));
@@ -93,7 +114,7 @@ printf("\n-----------------------------------------------------------");
 
 searchParam[0].tag ="<Probe";
 searchParam[0].attribute ="Type=";
-searchParam[0].key ="\"PBCA\"";
+searchParam[0].key ="\"IonCh. 0.2-3cc (PBCA)\"";
 
 searchParam[1].tag ="<DisplayCaption";
 searchParam[1].attribute = NULL;
@@ -135,7 +156,7 @@ printf("\nResult length %d\n",strlen(result));
 printf("Result:\n%s",result);
 printf("\n-----------------------------------------------------------");
 
-searchParam[0].tag ="<InfoTexts";
+searchParam[0].tag ="<DecimalSeparator";
 searchParam[0].attribute = NULL;
 searchParam[0].key = NULL;
 
@@ -244,6 +265,28 @@ searchProperty.dataOfSearchParam=2;
 searchProperty.resultType = XMLDATA_TAG_BODY; // Extract tag only.
 
 printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"mam1.xml",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
+printf("\nResult length %d\n",strlen(result));
+printf("Result:\n%s",result);
+printf("\n-----------------------------------------------------------");
+
+searchParam[0].tag ="<MAM";
+searchParam[0].attribute =NULL;
+searchParam[0].key =NULL;
+
+searchParam[1].tag ="<MQ";
+searchParam[1].attribute = "Type=";
+searchParam[1].key = "\"M3\"";
+
+searchParam[2].tag = NULL;//"<ChCu";
+searchParam[2].attribute = "Unit=";
+searchParam[2].key ="\"Gy\"";
+
+// Data search parameter should not point to the tag which is NULL
+searchProperty.noOfSearchParam=1;
+searchProperty.dataOfSearchParam=1;
+searchProperty.resultType = XMLDATA_TAG_BODY; // Extract tag only.
+
+printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"MQInt.xml",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
 printf("\nResult length %d\n",strlen(result));
 printf("Result:\n%s",result);
 printf("\n-----------------------------------------------------------");

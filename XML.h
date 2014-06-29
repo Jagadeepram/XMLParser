@@ -67,7 +67,7 @@ typedef enum
 typedef enum
 {
     XMLDATA_TAG =0,
-//    XMLDATA_BODY,
+    XMLDATA_BODY,
     XMLDATA_TAG_BODY
 }XMLResultType;
 

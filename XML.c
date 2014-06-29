@@ -304,6 +304,9 @@ char* GetEndTag(char* block)
 //    }
 //    return 0;
 //}
+
+#define StrCopy(a,b,c)  strcpy(a,b)
+#define StrCat(a,b,c)   strcat(a,b)
 /**
 Tag can be "<tag " or "<tag>"
 convert to "</tag>"
@@ -370,7 +373,7 @@ bool IsAlphaNum(char ch)
 // Attributes starts with "attributes="
 
 //int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searchProperty, char* result);
-int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searchProperty, char* result, U8 resLen)
+int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searchProperty, char* result, U16 resLen)
 {
     switch(xmlState)
     {
@@ -384,7 +387,6 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
         }
         if(activateStore)
         {
-//            if(IsAlphaNum(ch)||( result[resIndex-1] != ' ' && ch == ' '))
             if(ch >= ' ')
             {
                 if(resIndex < resLen)
@@ -400,21 +402,22 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
             pBuff[buffIndex++] = ch;
         }
         if(activateStore)
+        {
             if(resIndex < resLen)
             {
                 result[resIndex++]=ch;
             }
             else
                 return -1;
+        }
          if(ch == '>')
          {
-             if(buffIndex < PARSER_BUFFER_LENGTH)
-                pBuff[buffIndex]= '\0';
-//            printf("%s",pBuff);
+			if(buffIndex < PARSER_BUFFER_LENGTH)
+				pBuff[buffIndex]= '\0';
             buffIndex = 0;
             // Analyse the string starting from "<" to ">"
             int i,attFound;
-            char attAndKey[200];
+            char attAndKey[50];
             // search for a stop block
             for(i=0; i< activeAtt ; i ++)
             {
@@ -425,8 +428,6 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
                 {
                     xmlState = PARSE_STATE_STOP_ANALYSE;
                     activeAtt = i;
-//                    printf("DESCEND %s ",pBuff);
-//                    printf("TAGINDEX %d \n",activeAtt);
                     break;
                 }
             }
@@ -439,8 +440,8 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
                 // Concatenate attribute and key and search in pBuff.
                 if(searchParam[i].attribute != NULL && searchParam[i].key != NULL)
                 {
-                    strcpy(attAndKey, searchParam[i].attribute);
-                    strcat(attAndKey, searchParam[i].key );
+                    StrCopy(attAndKey, searchParam[i].attribute,50);
+                    StrCat(attAndKey, searchParam[i].key ,50);
                     attFound &= (strstr(pBuff,attAndKey)? 1:0);
                 }
                 if((attFound == 1) &&
@@ -453,10 +454,7 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
                      if(activeAtt == searchProperty->noOfSearchParam)
                      {
                         dataFound = 1;
-//                        printf("DATA FOUND !");
                      }
-//                     printf("ASCEND %s ",pBuff);
-//                     printf("TAGINDEX %d\n",activeAtt);
                      break;
                 }
             }
@@ -468,14 +466,17 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
         if(activeAtt == searchProperty->dataOfSearchParam)
         {
             resIndex = 0;
-            if((resIndex + strlen(pBuff))< resLen)
-                strcpy(result, pBuff);
-            else
-                return -1;
-            resIndex = strlen(result);
+            if(searchProperty->resultType != XMLDATA_BODY )
+            {
+                if((resIndex + strlen(pBuff))< resLen)
+                    StrCopy(result, pBuff,resLen);
+                else
+                    return -1;
+                resIndex = strlen(result);
+            }
             activateStore = 1;
 
-            if(searchProperty->resultType == XMLDATA_TAG)
+            if(searchProperty->resultType == XMLDATA_TAG && resIndex <resLen)
             {
                 result[resIndex]='\0';
                 return 1;
@@ -488,7 +489,8 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
             else
                 return -1;
         }
-        pBuff[buffIndex++]=ch;
+        if(buffIndex < PARSER_BUFFER_LENGTH)
+			pBuff[buffIndex++]=ch;
         if(ch == '<')
             xmlState = PARSE_STATE_READ;
         else
@@ -498,13 +500,20 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
          if(activeAtt+1 == searchProperty->dataOfSearchParam)
          {
              activateStore = 0;
-             if(dataFound)
+             if(dataFound && resIndex <resLen)
              {
+                char *pStr=NULL;
                 result[resIndex] = '\0';
+                if(searchProperty->resultType == XMLDATA_BODY)
+                {
+                    pStr= strstr(result,EndTag(searchParam[activeAtt].tag));
+                    *pStr='\0';
+                }
                 return 1;
              }
          }
-        pBuff[buffIndex++]=ch;
+        if(buffIndex < PARSER_BUFFER_LENGTH)
+        	pBuff[buffIndex++]=ch;
         if(ch == '<')
             xmlState = PARSE_STATE_READ;
         else
@@ -513,6 +522,7 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
     }
     return 0;
 }
+
 
 
 //int ExtractXMLData(char ch,attributeParam* attParam,int attNo,int attResult, char* result)
