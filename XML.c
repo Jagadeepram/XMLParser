@@ -458,6 +458,14 @@ int ExtractXMLData(char ch,_searchParameters* searchParam,_searchProperty *searc
                      break;
                 }
             }
+            // Check for comments and remove it from the result.
+            char *pStr=NULL;
+            pStr = strstr(result,"<!");
+            if(pStr)
+            {
+                *pStr ='\0';
+                resIndex = strlen(result);
+            }
             if(xmlState == PARSE_STATE_READ)
                 xmlState = PARSE_STATE_START;
          }
