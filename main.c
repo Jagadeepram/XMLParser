@@ -3,6 +3,7 @@
 #include <string.h>
 #include "ReadXMLFile.h"
 #include "XML.h"
+/// Test for Git update
 int main()
 {
     char *result = malloc(MAX_SEARCH_ELEMENT);
@@ -42,6 +43,28 @@ searchProperty.dataOfSearchParam=2;
 searchProperty.resultType = XMLDATA_BODY; // Extract tag only.
 
 printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"IDS_2.xml",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
+printf("\nResult length %d\n",strlen(result));
+printf("Result:\n%s",result);
+printf("\n-----------------------------------------------------------");
+
+searchParam[0].tag ="<Crc";
+searchParam[0].attribute =NULL;
+searchParam[0].key =NULL;
+
+//searchParam[1].tag ="<MQ ";
+//searchParam[1].attribute = "Type=";
+//searchParam[1].key = "\"O1\"";
+//
+//searchParam[2].tag = NULL;
+//searchParam[2].attribute = "Unit=";
+//searchParam[2].key ="\"A\"";
+
+// Data search parameter should not point to the tag which is NULL
+searchProperty.noOfSearchParam=1;
+searchProperty.dataOfSearchParam=1;
+searchProperty.resultType = XMLDATA_TAG_BODY; // Extract tag only.
+
+printf("\nStatus %d",  XmlReadBlockWithAttributes((char*)"CRCSysInfo.XML",searchParam,&searchProperty,result,MAX_SEARCH_ELEMENT));
 printf("\nResult length %d\n",strlen(result));
 printf("Result:\n%s",result);
 printf("\n-----------------------------------------------------------");

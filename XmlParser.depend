@@ -66,3 +66,26 @@
 	<string.h>
 	"XML.h"
 
+1425643231 source:c:\jagadeep\codes\xmlparser\readxmlfile.c
+	<stdio.h>
+	"ReadXmlFile.h"
+	"XML.h"
+
+1425643231 c:\jagadeep\codes\xmlparser\readxmlfile.h
+	"XML.h"
+
+1425643231 c:\jagadeep\codes\xmlparser\xml.h
+
+1425643231 source:c:\jagadeep\codes\xmlparser\xml.c
+	"XML.h"
+	<stdio.h>
+	<string.h>
+	"XML.h"
+
+1425644055 source:c:\jagadeep\codes\xmlparser\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ReadXMLFile.h"
+	"XML.h"
+
